@@ -10,6 +10,7 @@ const MongoStore = require('connect-mongo')(session)
 const methodOverride = require('method-override');
 
 const app = express();
+const {sessionSecret}=require('./config/keys')
 
 // Passport
 
@@ -34,7 +35,7 @@ app.set('view engine', '.hbs')
 // Session
 app.use(
     session({
-        secret:'shaxriyor',
+        secret:sessionSecret,
         resave:false,
         saveUninitialized:false,
         cookie:null,
