@@ -1,0 +1,119 @@
+html {
+  height: 100%; }
+  html body {
+    height: 100%; }
+    html body header .navbar .navbar-brand {
+      text-decoration: none;
+      font-weight: bold;
+      font-style: italic;
+      font-family: "Arial Rounded MT Bold", sans-serif; }
+    html body main .row .card {
+      margin: 200px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 15rem;
+      min-width: 20rem;
+      z-index: 1; }
+      html body main .row .card form {
+        position: relative; }
+        html body main .row .card form label {
+          position: absolute;
+          transform: translateY(0.2rem);
+          z-index: 1; }
+        html body main .row .card form input {
+          border: none;
+          outline: none;
+          border-bottom: 1px solid gray;
+          z-index: 2; }
+          html body main .row .card form input:focus label {
+            position: absolute;
+            transform: translateY(-30px);
+            color: #008ffd; }
+      html body main .row .card #reset {
+        color: #008ffd;
+        font-family: sans-serif; }
+        html body main .row .card #reset:hover {
+          background-color: whitesmoke; }
+        html body main .row .card #reset:focus {
+          box-shadow: none; }
+
+.bg-black {
+  background-color: black; }
+
+.night {
+  background-color: #343a40 !important;
+  color: white; }
+  .night a {
+    color: white; }
+  .night main .container .card {
+    border-color: #ffc107;
+    background-color: #f8f9fa;
+    color: black; }
+
+.day {
+  background-color: whitesmoke;
+  color: black; }
+  .day a {
+    color: black; }
+  .day main .container .card {
+    border-color: #007bff; }
+
+#myInput {
+  padding: 6px 15px;
+  font-size: 20px;
+  border: 1px solid coral;
+  margin-left: auto;
+  display: block;
+  border-radius: 25px;
+  /*transition-duration: .5s;*/
+  transition: .5s linear; }
+  #myInput:focus {
+    outline: none; }
+
+ul {
+  padding-left: 0; }
+
+ul li {
+  border: 1px solid coral;
+  margin-bottom: -1px;
+  font-size: 20px;
+  list-style-type: none; }
+
+ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 5px; }
+
+ul li a:hover {
+  background-color: #000000;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  transition-duration: .3s; }
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px; }
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc; }
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1; }
+
+/*# sourceMappingURL=main.css.map */

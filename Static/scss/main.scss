@@ -1,0 +1,646 @@
+// $collapseButtonColor:#ddddde;
+$collapseButtonColor:whitesmoke;
+$collapseButtonColorHover:rgb(224, 229, 231);
+// $collapseButtonColorNight:#485561;
+$collapseButtonColorNight:#465564;
+// $collapseButtonColorHoverNight:#35404b;
+$collapseButtonColorHoverNight:#3d4a57;
+$contentColor:#f1f1f8;
+// $contentColorNight:#5c6772;
+$contentColorNight:#4e5761;
+$nightFontColor:#fffff0;
+
+$searchDay:white;
+$searchNight:  #343a40;
+
+html{
+  scroll-behavior: smooth;
+}
+.to-top{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding-top: 2px;
+  box-shadow: 0 0 4px gray;
+  box-sizing: border-box;
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+  // text-decoration: none;
+}
+//Progress bar under navbar
+.progress-bar {
+  height: 2px;
+  background: rgb(54, 122, 211);
+  box-shadow: 0 1px 3px gray;
+  width: 0%;
+}
+#profile{
+  display: none;
+}
+
+
+//language switcher
+.dropdown {
+  // float: left;
+  overflow: hidden;
+  position: relative;
+  background-color: inherit;
+  
+}
+.dropdown .dropbtn {
+  // font-size: 16px;  
+  border: none;
+  outline: none;
+  color: inherit;
+  padding: 0 0 14px 0;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0rem;
+  background-color: #f9f9f9;
+  // background-color: inherit;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.language-content{
+  left:-8rem!important;
+}
+.dropdown-content a {
+  // float: none;
+  color: black;
+  padding: 12px 5px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+//sidebar 
+.header {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  background-color: gray;
+  position: fixed;
+  height: 40px!important;
+  z-index: 10;
+}
+
+#sidebarMenu {
+  height: 100%;
+  position: fixed;
+  right: 0;
+  width: 20rem;
+  padding-top: 40px;
+  margin-top: 0;
+  transform: translateX(20rem);
+  transition: transform 250ms ease-in-out;
+  // background: $collapseButtonColorHoverNight;
+  background: white;
+  // color: black;
+  box-shadow: 0 5px 5px rgb(170, 169, 169);
+  // border-left: 1px solid rgb(80, 150, 255);
+}
+.sidebarMenuInner{
+  margin:0;
+  padding:0;
+  // border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner li{
+  list-style: none;
+  // color: #fff;
+  // color: #000;
+  color: inherit;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 20px;
+  cursor: pointer;
+  // border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  // border-bottom: 1px solid rgba(136, 135, 135, 0.212);
+}
+.sidebarMenuInner li span{
+  display: block;
+  font-size: 14px;
+  // color: rgba(255, 255, 255, 0.50);
+  color: inherit;
+}
+.sidebarMenuInner li a{
+  // color: #fff;
+  // color: #000;
+  color: inherit;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+input[type="checkbox"]:checked ~ #sidebarMenu {
+  transform: translateX(0);
+  
+}
+
+
+input[type=checkbox] {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  display: none;
+}
+.sidebarIconToggle {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: absolute;
+  z-index: 99;
+  height: 100%;
+  width: 100%;
+  top: 12px;
+  right: 15px;
+  height: 22px;
+  width: 22px;
+}
+.spinner {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  // background-color: #fff;
+  background-color: #000;
+  // color: inherit;
+  border-radius: 2px;
+  
+}
+.horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: right;
+  margin-top: 3px;
+}
+.diagonal.part-1 {
+  position: relative;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  float: rigth;
+}
+.diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: right;
+  margin-top: 3px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  opacity: 0;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(135deg);
+  margin-top: 8px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(-135deg);
+  margin-top: -9px;
+}
+
+
+//A code for Login page
+.card{
+  margin: 200px auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          min-height: 15rem;
+          min-width: 20rem;
+          z-index: 1;
+}
+
+//Shared code
+.navbar-brand {
+  text-decoration: none;
+  font-weight: bold;
+  font-style: italic;
+  font-family: "Arial Rounded MT Bold", sans-serif;
+  width: 100px;
+  margin-right: auto;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+
+.night {
+  background-color: #343a40 !important;
+  color: $nightFontColor;
+  nav{
+    box-shadow: 0 -2px 10px rgb(27, 27, 27);
+  }
+  a {
+    color: white;
+  }
+.dropdown-content{
+  // background-color: rgba(0, 0, 0, 0.911);
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.89);
+}
+.dropdown-content a:hover {
+  // background-color: rgb(32, 29, 29);
+  background-color: $collapseButtonColorHoverNight;
+}
+  main {
+    .container {
+      .card {
+        border-color: #ffc107;
+        background-color: #f8f9fa;
+        color: black;
+      }
+    }
+  }
+  #search{
+    background-color: $searchNight;
+    color: $nightFontColor;
+    border: 1px solid rgb(80, 150, 255) ;
+    box-shadow: 0 0 12px rgb(19, 18, 18);
+    &:hover{
+      box-shadow: 5px 5px 12px rgb(19, 18, 18);
+      transform: translateY(-1px);
+      
+    }
+
+  }
+  #addNote{
+    
+    box-shadow: 0 0 12px rgb(19, 18, 18);
+  &:hover{
+    box-shadow: 5px 5px 12px rgb(19, 18, 18);
+    transform: translateY(-1px);
+  }
+  }
+  .collapsible,.editedDate,.title{
+    background-color: $collapseButtonColorNight!important;
+    color: $nightFontColor;
+    &:hover,&:hover,&:hover{
+      background-color: $collapseButtonColorHoverNight!important;
+      .editedDate,.title{
+        background-color: $collapseButtonColorHoverNight!important;
+
+      }
+    }
+  }
+  .content,.noteBody,#title,#content,p{
+    background-color: $contentColorNight;
+    color: $nightFontColor;
+  }
+  .modal-content{
+    background-color: #343a40;
+    color: $nightFontColor;
+  }
+  #sidebarMenu {
+    background: black;
+    box-shadow: 0 5px 5px rgb(22, 21, 21);
+  }
+  .spinner {
+    background-color: $nightFontColor;
+  }
+}
+
+.day {
+  background-color: whitesmoke;
+  background-color: white;
+  color: black;
+
+  a {
+    color: black;
+  }
+  
+  #search{
+    background-color: $searchDay;
+    border: 1px solid rgb(80, 150, 255) ;
+  }
+}
+
+#addNote{
+  border-radius: 2rem;
+  height: 3rem;
+  box-shadow: 0 0 8px rgb(201, 201, 201);
+  &:hover{
+    box-shadow: 5px 5px 8px rgb(201, 201, 201);
+    transform: translateY(-1px);
+  }
+
+}
+
+nav{
+  box-shadow: 0 -2px 10px gray;
+}
+
+#search{
+  padding: 6px 25px;
+  font-size: 20px;
+  border: 1px solid rgb(80, 150, 255) ;
+  box-shadow: 0 0 10px rgb(219, 219, 219);
+  border-radius: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: $searchDay;
+
+&:hover{
+  box-shadow: 2px 5px 10px rgb(219, 219, 219);
+  transform: translateY(-1px);
+  
+}
+
+}
+#input-box{
+  display: block;
+  position: relative;
+  margin-left: auto;
+  transition: .2s linear;
+  
+}
+#searchLabel{
+  position: absolute;
+  transform: translate(16px,14px);
+  z-index: 1;
+}
+//changing a color of icons
+.editBtnIcon,.deleteBtnIcon,.icons {
+  color:inherit!important;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: $collapseButtonColor;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+
+
+}
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: $collapseButtonColorHover;
+
+  .title,.editedDate{
+    background-color: $collapseButtonColorHover;
+  }
+  
+}
+.dateContent{
+  font-size: 12px;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  // display: none;
+  overflow: hidden;
+  background-color: $contentColor;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+
+  
+
+}
+
+.editedDate,.title{
+  // background-color: #eee;
+  background-color: $collapseButtonColor;
+
+  color: #444;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+
+  
+  font-size: 15px;
+  &:hover{
+    background-color: $collapseButtonColorHover;
+  }
+  
+}
+.outline-none{
+outline: none;
+&:focus{
+  outline:none;
+  box-shadow: none;
+}
+}
+.noteBody{
+  padding: 5px 10px;
+  resize: none;
+  overflow: hidden;  
+  background-color: #f1f1f1;
+  
+}
+
+
+
+* {box-sizing: border-box}
+/* Full-width input fields */
+  .input, .textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+.input:focus, .textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelBtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and add buttons and add an equal width */
+.cancelBtn, .addBtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  // background-color: #474e5d;
+  background-color:rgba(71, 78, 93, 0.7);
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.navbar-nav{
+  margin-left: auto;
+}
+.navbarContainer{
+  display: flex!important;
+  justify-content: flex-end!important;
+  align-items: flex-end;
+  // background-color: yellow;
+}
+
+/* Change styles for cancel button and add button on extra small screens */
+@media screen and (max-width: 355px) {
+  .cancelBtn, .addBtn {
+    width: 100%;
+  }
+  
+}
+// @media (max-width:)
+
+
+//Change the collapse style on different screen sizes
+@media (min-width:0) and (max-width:767px){
+  .col-0{
+    display: none;
+  }
+  //show edited and created date in note content part
+  .dateContent{
+    display: flex!important;
+  }
+}
+
+@media (min-width:1500px) and (max-width:1700px){
+  .container{
+    max-width: 1350px;
+  }
+}
+@media (min-width:1700px) and (max-width:1900px){
+  .container{
+    max-width: 1550px;
+  }
+}
+@media (min-width:1900px) and (max-width:2100px){
+  .container{
+    max-width: 1750px;
+  }
+}
+@media (min-width:2100px) and (max-width:2300px){
+  .container{
+    max-width: 1950px;
+  }
+  
+}
+@media (min-width:2300px) {
+  .container{
+    max-width: 2150px;
+  }
+}
+
+
+//Modified container for navbar
+.container-nav{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+}
+@media (min-width: 576px) {
+  .container-nav {
+    max-width: 540px;
+  }
+  .to-top{
+    right: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-nav {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-nav {
+    max-width: 960px;
+  }
+  #openSidebarMenu,.sidebarIconToggle,#sidebarMenu{
+    display: none;
+  }
+  #profile{
+    display: inherit!important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-nav {
+    max-width: 1140px;
+  }
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MyNotes</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/style.css" />
+    <link href="/images/write.svg"  rel="shortcut icon" />
+  {{!-- <link rel="shortcut icon"  href="/images/icons8-note.ico"> --}}
+  <!-- Load an icon library -->
+  <script src="https://kit.fontawesome.com/b4bd855841.js" crossorigin="anonymous" async></script>
+
+  <!-- JS, Popper.js, and jQuery -->
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"
+    defer></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"
+    defer></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"
+    defer></script>
+  <script src="/js/app.js" defer></script>
+
+</head>
+
+<body id="body" class="day">
+  <nav class="header navbar fixed-top w-100 p-0  navbar-expand-md bg-white navbar-light">
+    <div class="container-nav d-flex">
+      {{!-- <a href="#" class="navbar-brand">SaveNotes</a> --}}
+      <a href="#" class="navbar-brand py-0"><img class="" src="/images/write.svg" alt="logo"> Save<span class="text-danger">Notes</span></a>
+      <div class="flex-right pt-2">
+        <span class="mr-md-4 dayTimeIconBox mr-2">
+          <i id="dayTimeIcon" data-icon="night" class="fa fa-lg fa-moon-o text-primary"></i>
+        </span>
+        <div class="dropdown d-inline">
+          <span class="dropbtn"><img id='language' class="mb-1" style="width: 23px;" src="images/uk.svg"
+              alt="eng"></span>
+          <div class="dropdown-content language-content">
+            <div class="p-1 text-muted language-label" href="#">Choose a language:</div>
+            <a id='en' href="#"><span class="d-inline"><img class="mb-1" style="width: 23px;" src="images/uk.svg"
+                  alt="eng"></span> ENGLISH</a>
+            <a id='ru' href="#"><span class="d-inline"><img class="mb-1" style="width: 23px;" src="images/russia.svg"
+                  alt="rus"></span> РУССКИЙ</a>
+            <a id='uz' href="#"><span class="d-inline"><img class="mb-1" style="width: 23px;"
+                  src="images/uzbekistan.svg" alt="uzb"></span> O`ZBEK</a>
+          </div>
+        </div>
+        <div class="d-none dropdown d-inline ml-5">
+          <span id="profile" class="dropbtn d-none">
+            <img class="mb-1 rounded-pill bg-light" style="width: 25px;" src="/images/user.svg">
+            <span ></span>
+            <i  class="fas fa-angle-down pt-1"></i>
+          </span>
+          <div class="dropdown-content">
+            <div id="email" class="p-1 px-2 text-muted language-label" href="#"></div>
+            {{!-- For next version --}}
+            {{!-- <a class="pl-3 text-muted" ><i class="fas fa-cog"></i> Settings</a>
+            <a class="pl-3 text-muted" ><i class="fas fa-info-circle"></i> About</a> --}}
+            <a class="pl-3" href="/auth/logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+          </div>
+        </div>
+      </div>
+      <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu" />
+      <label for="openSidebarMenu" class="sidebarIconToggle">
+        <div class="spinner diagonal part-1"></div>
+        <div class="spinner horizontal"></div>
+        <div class="spinner diagonal part-2"></div>
+      </label>
+      <div id="sidebarMenu">
+        <ul class="sidebarMenuInner">
+
+          <li class="py-0 "><img class="w-25 shadow d-block ml-auto mr-auto rounded-pill border-danger  mr-auto bg-light"
+              src="/images/user.svg" alt="profile"></li>
+          <li class="text-center"><span id="full-name-mobile"></span><span id="emailMobile" class="text-muted "></span></li>
+          {{!-- For next version --}}
+          {{!-- <li><a  class="text-muted " ><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a class="text-muted"  ><i class="fas fa-info-circle"></i> About</a></li> --}}
+          <li class="text-center mt-5"><a href="/auth/logout" ><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="progress-bar" id="myBar"></div>
+  </nav>
+  <main>
+    <div class="container mt-5">
+      <div class="row mt-2 px-3">
+        <button onclick="document.getElementById('new-note-form').style.display='block'" id="addNote"
+          class="col-sm-4 col-6 col-lg-3 col-xl-2 mb-3 mb-md-0 btn  btn-success add-note text-uppercase">add note <i
+            class="fas fa-feather-alt fa-lg text-white"></i></button>
+        <div id="input-box" class="col-2 col-sm-1 pr-0 pl-lg-4 pl-0 pl-sm-0 pl-xl-5">
+          <label id="searchLabel" for="search"><i class="fas fa-search fa-lg text-secondary"></i></label>
+          <input autocomplete="off" type="text" id="search" placeholder="" class="outline-none" />
+        </div>
+      </div>
+
+      <!-- The Modal (contains the Add Note form) -->
+      <div id="new-note-form" class="modal">
+        <form class="modal-content">
+          <div class="container">
+            <h1>Add Note</h1>
+            <hr>
+            <label for="title"><b id="enterTitle">Title</b></label>
+            <input class="input" type="text" placeholder="Enter Title" id="title" required>
+            <label for="nbody"><b id="enterNote">Note</b></label>
+            <textarea class="textarea" placeholder="Enter Note" id="content" required></textarea>
+            <div class="clearfix">
+              <button type="button" onclick="document.getElementById('new-note-form').style.display='none'"
+                class="cancelBtn button">Cancel</button>
+              <button type="submit" class="addBtn button">Add</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <template id="note-template">
+        <div class="collapsible-group col-12">
+          <div class="collapsible d-flex px-1">
+            <div class="col-2 col-sm-1 index mt-1 pl-1 text-center"></div>
+            <input class="col-md-6  col-7 col-sm-8 title font-weight-bold outline-none" readonly />
+            <div class="col-md-2 col-0 px-md-0 ml-1">
+              <div id="editedTitleLabel" class="my-n1 mb-n1 small">Edited</div>
+              <div class="editedDate outline-none"></div>
+            </div>
+            <div class="col-md-2 col-0 px-md-0">
+              <div id="createdTitleLabel" class="mt-n1 mb-n1 small">Created</div>
+              <div class="createdDate"></div>
+            </div>
+            <div class="col-2 text-success col-md-1 justify-content-around d-flex icons px-0 ">
+              <button alt='' class="btn  btn-white editBtnIcon p-0 outline-none mr-2 mr-xl-0 mr-lg-1" type="button"><i
+                  class="fas fa-edit fa-lg"></i></button>
+              <button class="btn btn-white deleteBtnIcon p-0 outline-none mr-xl-0 mr-md-1" type='submit'><i
+                  class="fas fa-trash fa-lg"></i></button>
+            </div>
+          </div>
+          <div class="content">
+            <div class="d-none justify-content-end dateContent mx-n1">
+              <div><span id="editedContentLabel">Edited:</span><span class="editedDateContent mr-1"></span></div>
+              <div><span id="createdContentLabel"> |Created:</span><span class="createdDateContent"></span></div>
+            </div>
+            <p>
+              <textarea class="w-100 mt-1 noteBody border-0 "></textarea>
+            </p>
+            <div class="d-none">
+              <button type="button" class="btn btn-sm btn-success saveBtn">Save</button>
+              <button type='button' class="btn btn-sm btn-warning ml-1 undoBtn">Undo</button>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <div id="notes-list" class="mt-4 row">
+
+      </div>
+    </div>
+
+  </main>
+  <div>
+    <a href="#" class="to-top px-2 d-none"><i class="fas fa-chevron-up"></i></a>
+  </div>
+</body>
+
+</html>

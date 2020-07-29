@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <!-- CSS only -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/login.css">
+    <link href="/images/write.svg"  rel="shortcut icon" />
+
+
+  <!-- Load an icon library -->
+  <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    /> -->
+  <script src="https://kit.fontawesome.com/b4bd855841.js" crossorigin="anonymous" async></script>
+
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"
+    defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"
+    defer></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"
+    defer></script>
+  <script src="/js/script.js" async></script>
+</head>
+
+<body>
+
+  <nav class="header navbar  w-100 p-0  navbar-expand-md bg-white navbar-light fixed-top border-bottom">
+    <div class="container-nav d-flex">
+      <a href="#" class="navbar-brand py-0"><img class="" src="/images/write.svg" alt="logo"> Save<span class="text-danger">Notes</span></a>
+      <div class="flex-right pt-2">
+
+        <div class="dropdown d-inline">
+          <span class="dropbtn"><img id='language' class="mb-1" style="width: 23px;" src="images/uk.svg"
+              alt="eng"></span>
+          <div class="dropdown-content language-content">
+            <div class="p-1 text-muted language-label" href="#">Choose a language:</div>
+            <a id='en' href="#"><span class="d-inline"><img class="mb-1" style="width: 23px;" src="images/uk.svg"
+                  alt="eng"></span> ENGLISH</a>
+            <a id='ru' href="#"><span class="d-inline"><img class="mb-1" style="width: 23px;" src="images/russia.svg"
+                  alt="rus"></span> РУССКИЙ</a>
+            <a id='uz' href="#"><span class="d-inline"><img class="mb-1" style="width: 23px;"
+                  src="images/uzbekistan.svg" alt="uzb"></span> O`ZBEK</a>
+          </div>
+        </div>
+        <a id="innerLink" href="#about" class="ml-3 text-decoration-none text-dark font-weight-light ">ABOUT</a>
+
+      </div>
+
+
+    </div>
+    <div class="progress-bar" id="myBar"></div>
+  </nav>
+  <main>
+    <div class="loginBg">
+
+      <section  id="loginSection" class="container">
+        <h1></h1>
+        <div class="row ">
+          <div class="col-3 offset-8">
+            <div class="card">
+              <div class="card-body my-5">
+                <h3>SaveNotes</h3>
+                <div>
+                  <p>Save your notes instantly.</p>
+                </div>
+                <div class="mt-4">
+                  <a href="/auth/google" class="btn btn-primary text-white">
+                    <i class="fa fa-google mr-2" id="loginBtn"></i>
+                     LOG IN WITH GOOGLE
+
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+<div class="overflow-hidden">
+    <section  id="about" class="container">
+
+      <div class="row py-5">
+        <div class="col-6 left-item slideElement image-about">
+          <img src="/images/online-learning.png" alt="">
+        </div>
+        <div class="col-6 text-about mt-5 right-item slideElement">
+          <h2 class="font-weight-bold right-item slideElement">Multidevice</h2>
+          <p class="right-item slideElement">
+           SaveNotes app can be accessed from any device from anywhere. 
+          </p>
+          <p class="p slideElement right-item">
+            Login to access all the saved notes and edit them instantly.
+          </p>
+          
+        </div>
+      </div>
+      <div class="row py-5">
+        
+        <div class="col-6 text-about mt-5 left-item slideElement">
+          <h2 class="font-weight-bold left-item slideElement">Easy to use</h2>
+          <p class="left-item slideElement">
+             Writing notes in our application is as easy as writing them on paper.
+          </p>
+          <p class="p slideElement left-item">
+            You will not face any difficulties using it thanks to user-friendly interface.
+          </p>
+          
+        </div>
+        <div class="col-6 right-item slideElement image-about justify-content-end d-flex">
+          <img class="h-75 w-50" src="/images/easy.png" alt="">
+        </div>
+      </div>
+      <div class="row py-5">
+        <div class="col-6 left-item slideElement image-about">
+          <img src="/images/secure.png" alt="">
+        </div>
+        <div class="col-6 text-about mt-5 right-item slideElement">
+          <h2 class="font-weight-bold right-item slideElement">Secure</h2>
+          <p class="right-item slideElement">
+            Do not worry about safety and privacy of your notes and passwords.
+          </p>
+          <p class="p slideElement right-item">
+            We do not share the information with third-party companies and organisations so nobody has access to your notes.
+          </p>
+          
+        </div>
+      </div>
+      <div class="row py-5">
+        
+        <div class="col-6 text-about mt-5 left-item slideElement">
+          <h2 class="font-weight-bold left-item slideElement">Fast</h2>
+          <p class="left-item slideElement">
+            <i>SaveNotes</i> is build using the latest technology based on JavaScript (Node.js).
+          </p>
+          <p class="p slideElement left-item">
+            It makes our application fast, real-time, scalable and able to work on all modern browsers and devices.
+          </p>
+          
+        </div>
+        <div class="col-6 right-item slideElement image-about justify-content-end d-flex">
+          <img class="w-75 h-100" src="/images/speed.png" alt="">
+        </div>
+      </div>
+    </section>
+    </div>
+<footer >
+  <div class="container text-white">
+    <div class="row mt-3">
+      <div class="col-1">
+        <a href="#">
+          <img src="/images/write.svg" alt="logo">
+        </a>
+        
+      </div>
+      <div class="col-4 offset-7 d-flex justify-content-end">
+        <a class="text-decoration-none text-white font-weight-light site-link" href="#">Login</a>
+        <a class="text-decoration-none text-white font-weight-light site-link ml-4" href="#about">About</a>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col-12">
+<div class="hr"></div>
+      </div>
+      
+    </div>
+    <div class="row mb-5 mt-4">
+      <div class="col-5 ">
+        © Copyright 2020 <a href="#" class="text-decoration-none text-white ">SaveNotes</a>- All Rights Reserved
+      </div>
+      <div class="col-2 offset-5 d-flex justify-content-end">
+        <div class="email mt-n2"><span class="email-text">SaveNotesMail@gmail.com</span><span class="copied">Copied!</span></div>
+        <a id="mailto" target="_top" class="ml-3 social" href="mailto:mynotes.techsup@gmail.com"><i class="fas fa-lg fa-envelope text-white "></i></a>
+        <a class="ml-3 social" href="https://t.me/Shakhriyor9909"><i class="fas fa-lg fa-paper-plane text-white "></i></a>
+        <a class="ml-3 social" href="https://github.com/JasurNormurodov/SaveNotes"><i class="fab fa-lg fa-github text-white "></i></a>
+        <a class="ml-3 social" href="https://t.me/J_Shavkatovich"><i class="far fa-lg fa-paper-plane text-white "></i></a>
+        
+        
+      </div>
+    </div>
+    </div>
+  </footer>
+
+
+  </main>
+  <div>
+    <a href="#" class="to-top px-2 d-none text-dark"><i class="fas fa-chevron-up"></i></a>
+  </div>
+  
+</body>
+
+</html>
