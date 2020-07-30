@@ -8,12 +8,14 @@ nav {
 }
 .loginBg {
   background-image: url("../images/back2.jpg");
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   height: 100%;
 }
 .text-about {
   font-size: 22px;
+  /* font-size: 1.5rem; */
   text-align: bottom;
 }
 p {
@@ -42,15 +44,26 @@ h2,p,.image-about,.p{
     transition-timing-function: ease-out;
 
 }
-h2{
 
-}
 p{
     transition-delay: .18s;
 }
 .p{
     transition-delay: .22s;
 
+}
+.google-auth{
+  background-image: url(../images/google.png);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  border-right: 1px solid rgba(190, 190, 190, 0.774);
+  padding-right: 15px;
+  width: 30px;
+}
+.border-secondary-muted{
+  border: 1px solid rgb(190, 190, 190);
 }
 
 .hr{
@@ -68,7 +81,7 @@ footer{
   
 }
 a:hover{
-  opacity: .6;
+  opacity: .85;
 }
 .social{
   opacity: .5;
@@ -86,9 +99,11 @@ a:hover{
   border-radius: 25px;
   padding: 7px;
   font-family: "Operator Mono A";
-  opacity: 0;
+  /* opacity: 0; */
   transform: translateY(10rem);
-  transition-duration: 1s;
+  /* transition-duration: 1s; */
+  /* animation: mail 5s linear 1; */
+
 
 }
 
@@ -123,4 +138,15 @@ h3{
   background-color: rgba(247, 247, 240, 0.603);
   border-radius: 0;
   border: none;
+  /* font-size: 7rem; */
+}
+
+.mail-clicked{
+  animation: mail 4s ease-out 1;
+}
+@keyframes mail{
+  0%{transform: translateY(10rem);}
+  25%{transform: translateY(0);}
+  85%{transform: translateY(0);}
+  100%{transform: translateY(10rem);}
 }

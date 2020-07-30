@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MyNotes</title>
+  <title>SaveNotes</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
   <link rel="stylesheet" href="/css/style.css" />
     <link href="/favicon.ico"  rel="shortcut icon" />
-  {{!-- <link rel="shortcut icon"  href="/images/icons8-note.ico"> --}}
+    
   <!-- Load an icon library -->
   <script src="https://kit.fontawesome.com/b4bd855841.js" crossorigin="anonymous" async></script>
 
@@ -42,11 +42,11 @@
               alt="eng"></span>
           <div class="dropdown-content language-content">
             <div class="p-1 text-muted language-label" href="#">Choose a language:</div>
-            <a id='en' href="#"><span class="d-inline"><img class="mb-1" style="width: 23px;" src="images/uk.svg"
+            <a id='en' href="#"><span class="d-inline"><img class="mb-1" src="images/uk.svg"
                   alt="eng"></span> ENGLISH</a>
-            <a id='ru' href="#"><span class="d-inline"><img class="mb-1" style="width: 23px;" src="images/russia.svg"
+            <a id='ru' href="#"><span class="d-inline"><img class="mb-1" src="images/russia.svg"
                   alt="rus"></span> РУССКИЙ</a>
-            <a id='uz' href="#"><span class="d-inline"><img class="mb-1" style="width: 23px;"
+            <a id='uz' href="#"><span class="d-inline"><img class="mb-1"
                   src="images/uzbekistan.svg" alt="uzb"></span> O`ZBEK</a>
           </div>
         </div>
@@ -151,7 +151,11 @@
           </div>
         </div>
       </template>
-
+      <div id="emptyBg" class="row mt-5 mt-md-n5 d-none">
+        <div class="col-12 col-md-8 ml-auto mr-auto">
+          <img class="w-100 muted" src="/images/empty.png" alt="addNotes">
+        </div>
+      </div>
       <div id="notes-list" class="mt-4 row">
 
       </div>

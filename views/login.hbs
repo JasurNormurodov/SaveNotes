@@ -31,7 +31,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"
     defer></script>
-  <script src="/js/script.js" async></script>
+  <script src="/js/login.js" async></script>
 </head>
 
 <body>
@@ -46,15 +46,15 @@
               alt="eng"></span>
           <div class="dropdown-content language-content">
             <div class="p-1 text-muted language-label" href="#">Choose a language:</div>
-            <a id='en' href="#"><span class="d-inline"><img class="mb-1" style="width: 23px;" src="images/uk.svg"
+            <a id='en' href="#"><span class="d-inline"><img class="mb-1"  src="images/uk.svg"
                   alt="eng"></span> ENGLISH</a>
-            <a id='ru' href="#"><span class="d-inline"><img class="mb-1" style="width: 23px;" src="images/russia.svg"
+            <a id='ru' href="#"><span class="d-inline"><img class="mb-1"  src="images/russia.svg"
                   alt="rus"></span> РУССКИЙ</a>
-            <a id='uz' href="#"><span class="d-inline"><img class="mb-1" style="width: 23px;"
+            <a id='uz' href="#"><span class="d-inline"><img class="mb-1" 
                   src="images/uzbekistan.svg" alt="uzb"></span> O`ZBEK</a>
           </div>
         </div>
-        <a id="innerLink" href="#about" class="ml-3 text-decoration-none text-dark font-weight-light ">ABOUT</a>
+        <a id="innerLink" href="#about" class="ml-3 text-decoration-none text-dark font-weight-light text-uppercase">About</a>
 
       </div>
 
@@ -67,8 +67,8 @@
 
       <section  id="loginSection" class="container">
         <h1></h1>
-        <div class="row ">
-          <div class="col-3 offset-8">
+        <div class="row">
+          <div class="col-12  col-md-3 offset-md-8 offset-0 ">
             <div class="card">
               <div class="card-body my-5">
                 <h3>SaveNotes</h3>
@@ -76,9 +76,8 @@
                   <p>Save your notes instantly.</p>
                 </div>
                 <div class="mt-4">
-                  <a href="/auth/google" class="btn btn-primary text-white">
-                    <i class="fa fa-google mr-2" id="loginBtn"></i>
-                     LOG IN WITH GOOGLE
+                  <a href="/auth/google" class="btn btn-white bg-white border-secondary-muted font-weight-bolder">
+                    <div class="google-auth d-inline-block mx-2 mb-n1" id="loginBtn"></div><span>Login with Google</span>
 
                   </a>
                 </div>
@@ -92,11 +91,11 @@
     <section  id="about" class="container">
 
       <div class="row py-5">
-        <div class="col-6 left-item slideElement image-about">
+        <div class="col-6  left-item slideElement image-about">
           <img src="/images/online-learning.png" alt="">
         </div>
         <div class="col-6 text-about mt-5 right-item slideElement">
-          <h2 class="font-weight-bold right-item slideElement">Multidevice</h2>
+          <h2 class="font-weight-bold right-item slideElement">Crossplatform</h2>
           <p class="right-item slideElement">
            SaveNotes app can be accessed from any device from anywhere. 
           </p>

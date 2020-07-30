@@ -11,6 +11,9 @@ html {
   position: fixed;
   right: 10px;
   bottom: 20px; }
+  .muted{
+    opacity: .5;
+  }
 
 .progress-bar {
   height: 2px;
@@ -46,6 +49,9 @@ html {
 
 .language-content {
   left: -8rem !important; }
+  .language-content img{
+    width: 23px;
+  }
 
 .dropdown-content a {
   color: black;

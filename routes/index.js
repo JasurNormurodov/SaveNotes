@@ -14,6 +14,7 @@ router.get('/', ensureGuest,(req, res)=>{
     })
 })
 
+
 // Homepage
 // Get /homepage
 // router.get('/homepage',ensureAuth, (req,res)=>{ 

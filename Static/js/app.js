@@ -34,15 +34,15 @@ const getUserInfo = () => {
   let responseStatus;
   fetch("/user")
     .then((response) => {
-         responseStatus=response.status;      
-     return  response.json()})
+      responseStatus = response.status;
+      return response.json();
+    })
     .then((json) => {
       const imgUrl = json.image;
       const fullName = json.displayName;
       const email = json.email;
       const profile = document.getElementById("profile");
       const profileMobile = document.querySelector(".sidebarMenuInner");
-      
 
       profile.querySelector("img").src = imgUrl;
       profileMobile.querySelector("img").src = imgUrl;
@@ -50,12 +50,11 @@ const getUserInfo = () => {
       document.getElementById("full-name-mobile").textContent = fullName;
       document.getElementById("email").textContent = email;
       document.getElementById("emailMobile").textContent = email;
-      if(responseStatus>=400){
-        console.log('Something went wrong with getting gmail`s imgage');
+      if (responseStatus >= 400) {
+        console.log("Something went wrong with getting gmail`s imgage");
         profileMobile.querySelector("img").src = "/images/user.svg";
         profile.querySelector("img").src = "/images/user.svg";
-  
-        }
+      }
     });
 };
 
@@ -65,6 +64,7 @@ const noteElement = document.getElementById("note-template");
 const form = document.querySelector("#new-note-form form");
 const languageBtn = document.getElementById("language");
 const outBtns = document.querySelectorAll(".fa-sign-out-alt");
+const emptyBg = document.getElementById("emptyBg");
 //For next version
 // const settingsBtns = document.querySelectorAll(".fa-cog");
 // const aboutBtns = document.querySelectorAll(".fa-info-circle");
@@ -131,7 +131,7 @@ const Uzbek = {
   CANCEL_BTN: "Bekor qilish",
   //For next version
   // SETTINGS: " Sozlamalar(tez kunda)",
-  // ABOUT: " Malumot (tez kunda)",
+  // ABOUT: " Ma`lumot (tez kunda)",
 };
 let languagePack = English;
 
@@ -305,6 +305,8 @@ function updateEventHandlers() {
   reIndexing();
   makingContentEditable();
   search();
+  updateBgImage(listNotes.childElementCount);
+
 }
 function createPost(title, content, id) {
   const note = JSON.stringify({
@@ -321,7 +323,6 @@ function createPost(title, content, id) {
     },
   });
 
-  
   updateEventHandlers();
 }
 fetchPosts();
@@ -365,8 +366,9 @@ listNotes.addEventListener("click", (event) => {
       method: "DELETE",
     });
     post.style.display = "none";
-    post.alt = "deleted";
+    post.dataset.status = "deleted";
     reIndexing();
+    updateBgImageNoteDeleted();
   }
   //edit a title
   else if (event.target.classList.contains("fa-edit")) {
@@ -463,7 +465,7 @@ function search() {
       textValue = title.value + noteBody.value;
       if (
         textValue.toUpperCase().indexOf(filter) > -1 &&
-        notes[i].alt !== "deleted"
+        notes[i].dataset.status !== "deleted"
       ) {
         notes[i].style.display = "";
       } else {
@@ -513,9 +515,34 @@ function makingContentEditable() {
           });
         } else if (content.value === currenContent) {
           content.parentElement.nextElementSibling.className = "d-none";
-          
         }
       });
     });
   }
+}
+// const notess=document.getElementById('notes-list');
+// const notess2=document.getElementsByClassName('collapsible-group');
+// const notess3=document.querySelectorAll('.collapsible-group');
+
+function updateBgImage(notesNumber) {
+  // const notesList=document.getElementById('notes-list');
+  // console.log(notesList)
+  // console.log(notesList.childElementCount)
+  if (notesNumber !== 0) {
+    emptyBg.classList.add("d-none");
+  } else {
+    emptyBg.classList.remove("d-none");
+  }
+}
+// updateBgImage(notesList.childElementCount);
+function updateBgImageNoteDeleted() {
+  const notesList = document.querySelectorAll("#notes-list .collapsible-group");
+  let notesNum = 0;
+  for (notes of notesList) {
+    if (notes.dataset.status === "deleted") {
+      continue;
+    }
+    notesNum++;
+  }
+  updateBgImage(notesNum);
 }
