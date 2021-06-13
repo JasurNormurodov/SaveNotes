@@ -1,3 +1,4 @@
-Simple and easy to use Web-based application to save notes instantly.
+# SaveNotes - Save your notes instantly.
+Simple and easy to use Web-based application written in JavaScript.
 
-[Website](http://savenotes.herokuapp.com/)
+[Project Website](http://savenotes.herokuapp.com/)
